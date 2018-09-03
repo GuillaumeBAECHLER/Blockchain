@@ -1,4 +1,4 @@
 const Block = require('./block');
 
-const block = new Block('foo', 'prevhash', 'hash', 'data');
-console.log(block.toString());
+const foo = Block.mineBlock(Block.genesis(), 'foo');
+console.log(foo.toString());

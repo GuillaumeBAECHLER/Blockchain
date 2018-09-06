@@ -20,7 +20,7 @@ class Block {
   }
 
   static genesis() {
-    return new this('Genesis Block', 'Genesis Block', 'Genesis Block', []);
+    return new Block('Genesis Block', 'Genesis Block', 'Genesis Block', []);
   }
 
   static mineBlock(lastBlock, data) {
@@ -33,6 +33,11 @@ class Block {
 
   static hash(timestamp, prevBlockHash, data) {
     return SHA256(`${timestamp}${prevBlockHash}${data}`).toString();
+  }
+
+  static hashOfBlock(block){
+    const { timestamp, prevBlockHash, data } = block;
+    return Block.hash(timestamp, prevBlockHash, data);
   }
 }
 

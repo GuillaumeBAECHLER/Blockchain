@@ -1,3 +1,5 @@
+// Blockchain test part
+/*
 const Blockchain = require('./blockchain');
 
 const bc = new Blockchain();
@@ -8,3 +10,8 @@ for(let i = 0; i < 10; i++){
   console.timeEnd(`Adding block ${i}`);
 }
 console.timeEnd('Building bc');
+*/
+
+const Wallet = require('./wallet');
+const wallet = new Wallet();
+console.log(wallet.toString());

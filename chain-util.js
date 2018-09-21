@@ -17,7 +17,13 @@ class ChainUtil {
   }
 
   static verifySignature(publicKey, signature, dataHash) {
-    return ec.keyFromPublic(publicKey, 'hex').verify(dataHash, signature);
+    try {
+      return ec.keyFromPublic(publicKey, 'hex').verify(dataHash, signature);
+    }
+    catch(Error) {
+        console.log("signature verification error for public key: " + publicKey + "; error message: " + Error.message);
+        return false;
+    }
   }
 }
 

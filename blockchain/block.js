@@ -56,8 +56,8 @@ class Block {
   static adjustDifficulty(lastBlock, currentTime) {
     let { difficulty } = lastBlock;
     if(
-      lastBlock.timestamp + MINE_RATE > currentTime + TOLERANCE ||
-      lastBlock.timestamp + MINE_RATE < currentTime - TOLERANCE
+      currentTime < lastBlock.timestamp + MINE_RATE - TOLERANCE ||
+      currentTime > lastBlock.timestamp + MINE_RATE + TOLERANCE
     ){
       difficulty = (lastBlock.timestamp + MINE_RATE > currentTime) ?
       difficulty + 1 : difficulty - 1;

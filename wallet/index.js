@@ -3,7 +3,7 @@ const { INITIAL_BALANCE } = require('../config');
 const Transaction = require('./transaction');
 
 class Wallet {
-  
+
   constructor() {
       this.balance = INITIAL_BALANCE;
       this.keyPair = ChainUtil.genKeyPair();
@@ -37,6 +37,14 @@ class Wallet {
     }
 
     return transaction;
+  }
+
+  static blockchainWallet() {
+    if(!Wallet.bcWallet) {
+      Wallet.bcWallet = new this();
+      Wallet.bcWallet.address = 'blockchain-wallet';
+    }
+    return Wallet.bcWallet;
   }
 }
 

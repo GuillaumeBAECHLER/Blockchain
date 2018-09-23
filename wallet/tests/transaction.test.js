@@ -72,7 +72,6 @@ describe('Transaction', () => {
     });
 
     it(`reward the miner's wallet`, () => {
-      console.log(transaction.outputs.find(output => output.address === wallet.publicKey));
       expect(transaction.outputs.find(output => output.address === wallet.publicKey).amount)
         .toEqual(MINING_REWARD);
     });

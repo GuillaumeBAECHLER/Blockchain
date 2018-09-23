@@ -16,9 +16,16 @@ class Miner {
       Transaction.rewardTransaction(this.wallet, Wallet.blockchainWallet())
     );
     // create a block consisting of a valid transaction
+    const block = this.blockchain.addBlock(validTransactions);
     // synchronise the chains in the p2p server
+    this.p2pServer.syncChains();
     // clear the transaction pool
+    this.transactionPool.clear();
     // broadcast to every miner to clear their transaction pools
+    // Todo : replace with a callback when blocks are added and clear only transactions added in blocks
+    this.p2pServer.broadcastClearTransactions();
+
+    return block;
   }
 }
 

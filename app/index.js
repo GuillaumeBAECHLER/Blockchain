@@ -51,6 +51,10 @@ app.get('/public-key', (req, res) => {
   res.json({ publicKey: wallet.publicKey });
 });
 
+app.get('/balance', (req, res) => {
+  res.json(wallet.calculateBalance(bc));
+});
+
 app.listen(HTTP_PORT, () => {
   console.log(`Listening on port ${HTTP_PORT}`);
 });

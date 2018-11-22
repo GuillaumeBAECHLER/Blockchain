@@ -150,7 +150,20 @@ i.material-icons {
 
 .copy {
     position: absolute;
-    
+    left: 75%;
+    top: 15px;
+}
+.for_copy {
+    color: #71B280;
+}
+
+.btn_copy {
+    border: none;
+    background: none;
+}
+
+.btn_copy:focus {
+    background: none;
 }
 
 .name h2 {
@@ -195,7 +208,7 @@ i.material-icons {
 
 .account_photo img {
   position: absolute;
-  bottom: -28px;
+  bottom: -15px;
   right: 0px;
   width: 109%;
   height: auto;

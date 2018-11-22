@@ -18,10 +18,10 @@
         <div class="shape2"></div>
       </div>
     </div>
-    <div class="copy"><a href=""><i class="material-icons">content_copy</i></a></div>
+    <div class="copy"><button class="btn_copy"><i class="material-icons for_copy">content_copy</i></button></div>
       <div class="name"><h2></h2></div>
       <div class="menu"></div><a class="btn-floating btn waves-effect waves-light transparent"><i class="material-icons">more_vert</i></a></div>
-      <div class="account_photo"><img src="../images/guillaume.png" alt="photo de profil"></div>
+      <div class="account_photo"><img src="" alt="photo de profil"></div>
       <div class="cercle_amount"><input class="disponible" disabled value="150" type="text"><label class="label_dispo" for="disponible">TBC</label></div>
     <div class="transaction">
       <div class="compteur">
@@ -41,16 +41,55 @@
         <label for="autocomplete-input">User</label>
       </div>
       </div>
-      <a class="waves-effect waves-light btn">envoyer</a>
+      <a id="send" class="waves-effect waves-light btn">envoyer</a>
     </div>
     <script type="text/javascript">
       $( document ).ready(function() {
+        let users = [
+          'https://randomuser.me/api/portraits/women/21.jpg',
+          'https://randomuser.me/api/portraits/women/68.jpg',
+          'https://randomuser.me/api/portraits/women/29.jpg',
+          'https://randomuser.me/api/portraits/women/74.jpg',
+          'https://randomuser.me/api/portraits/men/22.jpg',
+          'https://randomuser.me/api/portraits/men/84.jpg'
+        ]
+        let publicKey = 0;
+
         $.get( "/public-key", function( data ) {
+          publicKey = data.publicKey
           $( ".name>h2" ).html((data.publicKey).substring(0, 15));
         });
         $.get( "/balance", function( data ) {
           $( '.disponible' ).val(data)
         });
+
+        let user = Math.floor((Math.random() * users.length));
+        $('.account_photo>img').attr('src', users[user])
+
+        function getAddress() {
+          var me = $('body')
+          var temp = $('<textarea class="temp-copy"></textarea>')
+          me.append(temp)
+          temp.text(publicKey).select()
+          document.execCommand("copy")
+          temp.remove()
+        }
+
+        function sendTransaction() {
+          let amount = parseInt($('#amount').val())
+          let recipient = $('#autocomplete-input').val()
+          $.ajax({
+            type: "POST",
+            crossDomain: true,
+            url: "/transaction",
+            data: JSON.stringify({recipient, amount}),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json'
+          });
+        }
+
+        $('.btn_copy').click(getAddress)
+        $('#send').click(sendTransaction)
       });
     </script>
 </body>

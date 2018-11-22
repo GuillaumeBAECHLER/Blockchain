@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    background: linear-gradient(135deg,#2A5160 0%,  #0F1F27 100%);
+}
+
+.log-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.log {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 60%;
+    background: #f3f2f2;
+    border-radius: 4px;
+}
+
+.block {
+    color: #0F1F27;
+}
+
+.log h1 {
+    position: absolute;
+    top: 40px;
+    font-size: 1.7em;
+    color: #2A5160;
+}
+
+.login, .mdp {
+    width: 75%;
+    height: 30px;
+    padding: 10px;
+}
+
+input::placeholder {
+    color: #2A5160;
+}
+
+.login {
+    padding-left: 10px;
+    border-left: 0.5px solid #2A5160;
+    border-top: 0.5px solid #2A5160;
+    border-right: 0.5px solid #2A5160;
+    border-bottom: none;
+    border-radius: 2px 2px 0px 0px;
+}
+
+.mdp {
+    border-left: 0.5px solid #2A5160;
+    border-bottom: 0.5px solid #2A5160;
+    border-right: 0.5px solid #2A5160;
+    border-top: 0.5px solid #2A5160;
+    border-radius: 0px 0px 2px 2px;
+}
+
+.sub {
+    position: absolute;
+    bottom: 70px;
+    right: 10%;
+    border: none;
+    border-radius: 2px;
+    width: 70px;
+    height: 40px;
+    background: #71B280;
+    color: white;
+    text-transform: uppercase;
+}

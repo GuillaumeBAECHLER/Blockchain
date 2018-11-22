@@ -23,7 +23,7 @@ class Block {
       ----------------------------------------
     `
   }
-
+  
   static genesis() {
     return new Block('-', '-', 'Genesis Block', [], 0, DIFFICULTY);
   }

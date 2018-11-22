@@ -1,0 +1,232 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    background: white;
+}
+
+.shapes {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.shape1 {
+    display: flex;
+    width: 76.5%;
+    height: 100%;
+    border-radius: 0% 80% 0% 0%;
+    background: #0F1F27;
+    align-items: flex-end;
+    
+}
+
+.shape2 {
+    width: 100%;
+    height: 40%;
+    background: #0F1F27;
+    position: absolute;
+    right: 0px;
+}
+
+.shape3 {
+    z-index: 99;
+    width: 26.1%;
+    height: 30%;
+    border-radius: 0% 0% 0% 100%;
+    background: white;
+    position: absolute;
+    bottom: 17%;
+    right: 0%;
+}
+
+.transaction {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    top: 0px;
+    width: 50%;
+    height: auto;
+}
+
+.compteur {
+    display: flex;
+}
+
+#amount {
+    color: white;
+    width: 100px;
+    font-size: 2.5em;
+    text-align: right;
+    border-color: #2A5160;
+}
+
+.input-field.amount {
+    margin: 0px;
+}
+
+.tbc {
+    position: relative;
+    font-size: 1.5em;
+}
+
+.arrows {
+    position: relative;
+    left: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+i.material-icons {
+    font-size: 40px;
+    line-height: 0.6;
+}
+
+.material-icons:hover {
+    cursor: pointer;
+}
+
+.personne {
+    display: flex;
+}
+
+.to {
+    position: relative;
+    right: 40px;
+    top: 20px;
+}
+
+.to + .input-field {
+    width: 75%;
+    right: 15px;
+}
+
+#autocomplete-input {
+    color: white;
+    position: relative;
+    width: 70%;
+    height: 50px;
+    padding-left: 10px;
+    border-color: #2A5160; 
+}
+
+#autocomplete-input + .active {
+    color: #2A5160;
+}
+
+#autocomplete-input:focus, #amount:focus{
+    box-shadow: 0 1px 0 0 #2A5160;
+}
+
+.waves-effect.waves-light.btn {
+    position: relative;
+    left: 205px;
+    background-color: transparent;
+    width: 150px;
+    height: 40px;
+    font-size: 1.4em;
+    font-weight: bold; 
+}
+
+.transaction p {
+    font-size: 2.5em;
+    color: white;
+    margin: 0px;
+}
+
+.transaction span {
+    color: rgb(126, 126, 126);
+}
+
+.copy {
+    position: absolute;
+    
+}
+
+.name h2 {
+  font-size: 1.7em;
+  position: absolute;
+  top: 12px;
+  left: 79%;
+  margin: 0;
+}
+
+.btn-floating.btn.waves-effect.waves-light.transparent {
+  width: 44px;
+  top: 8px;
+  left: 96%;
+  box-shadow: none;
+}
+
+.waves-effect.waves-light.btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 34.5%;
+  background-color: transparent;
+  width: 135px;
+  height: 40px;
+}
+
+.btn-floating i {
+  color: #000;
+  font-size: 30px;
+}
+
+.account_photo {
+  position: absolute;
+  left: 84%;
+  top: 10%;
+  width: 150px;
+  height: 145px;
+  border-radius: 50% 50%;
+  overflow: hidden;
+}
+
+.account_photo img {
+  position: absolute;
+  bottom: -28px;
+  right: 0px;
+  width: 109%;
+  height: auto;
+   
+}
+
+.cercle_amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17%;
+  height: 34%;
+  border-radius: 50% 50%;
+  background: black;
+  position: relative;
+  left: 69%;
+  top: 4%;
+  background: #0F1F27;
+}
+
+input[type=text]:not(.browser-default):disabled {
+    width: 110px;
+    font-size: 4em;
+    height: 4rem;
+    color: white;
+    border: none;
+}
+
+input[type=text]:not(.browser-default):disabled + label {
+    position: relative;
+    bottom: 15px;
+    color: rgb(168, 168, 168);
+    font-size: 2em;
+}
